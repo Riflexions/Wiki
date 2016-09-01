@@ -1,0 +1,15 @@
+<form class="form-horizontal">
+
+    <div class="row">
+        <label for="inputEmail" class="control-label col-xs-3 col-md-3 col-md-3">Search Wiki :</label>
+        <div class="col-xs-5 col-md-5 col-lg-5">
+            {{input type="text" value=newField class="form-control"}}
+        </div>
+
+
+        <div class="col-xs-1 col-md-1 col-lg-1">
+            <button {{action 'searchText'}} id="send" name="send" class="btn btn-primary">Search</button>
+        </div>
+    </div>
+
+</form>
