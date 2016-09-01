@@ -5,6 +5,7 @@ export default Ember.Component.extend({
     actions: {
         searchText: function () {
             alert("hi");
+            this.sendAction('searchT');
         }
     }
 
