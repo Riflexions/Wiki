@@ -1,6 +1,23 @@
 <div class="container">
-    {{wiki-wrapper searchT=(action 'searchT') }}
+    <div class="row">
+        {{wiki-wrapper searchT=(action 'searchT')}}
+        <br>
+    </div>
 
-       {{model.query.searchinfo.totalhits}}
-
+    <div class="row">
+        <div class="col-xs-5 col-md-5 col-lg-5">
+            <ul class="list-group-item-heading">
+                {{#each data.query.search as |value|}}
+                <li class="list-group-item">
+                    <button {{action 'searchDetails' value.title}} class="btn btn-default">{{value.title }}</button>
+                    <br> {{{value.snippet}}}
+                </li>
+                {{/each}}
+            </ul>
+            {{data.query.searchinfo.totalhits}}
+        </div>
+        <div class="col-xs-5 col-md-5 col-lg-5">
+            {{id}}{{extract}}
+        </div>
+    </div>
 </div>

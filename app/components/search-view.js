@@ -5,7 +5,7 @@ export default Ember.Component.extend({
     actions: {
         searchText: function () {
             var fieldName = this.get('newField');
-            alert(fieldName);
+
             this.sendAction('searchT',fieldName);
         }
     }

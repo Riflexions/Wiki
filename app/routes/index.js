@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-    model(){
+   /* model(){
         var searchObject={};
         $.ajax({
             type: "GET",
@@ -19,6 +19,6 @@ export default Ember.Route.extend({
             }
         });
         return ['searchObject'];
-    }
+    }*/
 
 });
