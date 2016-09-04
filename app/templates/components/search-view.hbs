@@ -14,9 +14,7 @@
             <li class="list-group-item">
                 <h4 class="list-group-item-heading">{{value.title}}</h4>
                 <br> {{{value.snippet}}}
-                <br>
-                <button {{action 'searchDetails' value.title}} class="btn btn-default">Read More</button>
-                {{link-to 'Read More' 'create-route.detail' value.title}}
+                <br> {{link-to 'Read More' 'create-route.detail' value.title}}
             </li>
             {{/each}}
         </ul>
