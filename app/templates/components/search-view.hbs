@@ -1,16 +1,24 @@
-<form class="form-horizontal">
-
-    <div class="row">
-        <label for="inputEmail" class="control-label col-xs-3 col-md-3 col-md-3">Search Wiki :</label>
-        <div class="col-xs-5 col-md-5 col-lg-5">
-            {{input type="text" value=newField class="form-control"}}
+<div class="row">
+    <form class="form-inline">
+        <div class="form-group">
+            <label for="search_term" class="control-label">Search Wiki :</label>
+            {{input type="text" id="search_term" value=newField class="form-control"}}
         </div>
-
-
-        <div class="col-xs-1 col-md-1 col-lg-1">
-            <button {{action 'searchText'}} id="send" name="send" class="btn btn-primary">Search</button>
-        </div>
-        <br>
+        <button {{action 'searchText'}} id="send" name="send" class="btn btn-primary">Search</button>
+    </form>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <ul class="list-group">
+            {{#each data.query.search as |value|}}
+            <li class="list-group-item">
+                <h4 class="list-group-item-heading">{{value.title}}</h4>
+                <br> {{{value.snippet}}}
+                <br>
+                <button {{action 'searchDetails' value.title}} class="btn btn-default">Read More</button>
+                {{link-to 'Read More' 'create-route.detail' value.title}}
+            </li>
+            {{/each}}
+        </ul>
     </div>
-
-</form>
+</div>
